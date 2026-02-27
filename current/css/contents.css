@@ -225,7 +225,7 @@ footer .inner >div p{margin-top:30px; font-size:18px;color:#A3A3A3;}
 .downloadWrap[hidden]{display:none !important;}
 .downloadWrap .inner{padding-top:100px; display:flex;gap:16px;}
 .downloadWrap .download{padding-left:96px;flex:1 1 540px;position:relative;}
-.downloadWrap .download .btnGuideBack{width:66px;height:66px;text-indent:-9999px;border:2px solid #fff;border-radius:100%;position:absolute;top:0;left:0;overflow:hidden;}
+.downloadWrap .download .btnGuideBack{width:66px;height:66px;text-indent:-9999px;border:2px solid #fff;border-radius:100%;position:absolute;left:96px;bottom:0;top:auto;transform:none;overflow:hidden;z-index:2;}
 .downloadWrap .download .btnGuideBack::after{content:'';width:14px;height:14px;border-left:2px solid #fff;border-bottom:2px solid #fff;position:absolute;top:50%;left:52%;transform:translate(-50%,-50%) rotate(45deg);}
 .downloadWrap .download em{font-family:"PlusJakartaSansMedium";font-size:32px;color:#fff;}
 .downloadWrap .download h3{margin-top:48px; font-family:"PlusJakartaSansBold";font-size:80px;line-height:1.2;color:#fff;}
@@ -333,7 +333,7 @@ footer .inner >div p{margin-top:30px; font-size:18px;color:#A3A3A3;}
 
   .downloadWrap .inner{flex-direction:column;}
   .downloadWrap .download{text-align:center;padding-left:0; flex:1 1 0;}
-  .downloadWrap .download .btnGuideBack{position:relative;left:auto;top:auto;margin:0 auto 24px;width:66px;height:66px;}
+  .downloadWrap .download .btnGuideBack{position:relative;left:auto;top:auto;bottom:auto;transform:none;margin:0 auto 24px;width:66px;height:66px;}
   .downloadWrap .download .btnGuideBack::after{width:14px;height:14px;border-left:2px solid #fff;border-bottom:2px solid #fff;}
   .downloadWrap .download h3 .pcBr{display:none}
   .downloadWrap .downloadBlock{margin-top:48px; flex:1 1 0;}
@@ -461,13 +461,13 @@ footer .inner >div p{margin-top:30px; font-size:18px;color:#A3A3A3;}
   .contactWrap .contact form .form-ele input[type="number"],
   .contactWrap .contact form .form-ele input[type="email"]{margin:2.1333vw 0 4.266vw; height:13.8667vw; font-size:4.8vw;text-indent:5.333vw; border-radius:2.1333vw;}
 
-  .guideWrap .inner{padding:14vw 10.6667vw 2vw}
+  .guideWrap .inner{padding:14vw 10.6667vw 4vw}
   .guideWrap .inner h3{font-size:8.5333vw;}
   .guideWrap .guide{margin:13.333vw auto 0;padding-bottom:5.333vw;max-width:none; border-bottom:.8vw solid #ddd; gap:2.6667vw}
   .guideWrap .guide .form-ele input[type="email"]{height:12.8vw; font-size:4.8vw;padding-right:10.6667vw;background-position:right 4.2667vw center;background-size:5.3333vw 5.3333vw}
   .guideWrap .guide button{width:12.8vw;height:12.8vw; background-size:100%;}
 
-  .guideStage + footer .inner{padding-top:8vw;}
+  .guideStage + footer .inner{padding-top:16vw;}
 
   .downloadWrap .inner{padding:10vw 10.6667vw 28vw;position:relative;}
   .downloadWrap .download{position:static;}
