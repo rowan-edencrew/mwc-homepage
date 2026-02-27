@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+
+  <meta name="author" content="">
+  <meta name="title" content="">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+
+  <script type="text/javascript" src="js/jquery.3.3.1.min.js"></script>
+  <link rel="stylesheet" href="css/ini.min.css">
+  <link rel="stylesheet" href="css/PlusJakartaSans.css">
+  <link rel="stylesheet" href="css/Pretendard.css">
+  <link rel="stylesheet" href="css/contents.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.2/lottie.min.js"></script>
+  <script type="text/javascript" src="js/ui.js"></script>
+
+  <title>Lucy Studio</title>
+</head>
+
+<body>
+  <div id="wrap">
+    <header>
+      <div class="inner">
+        <h1>
+          <a href="/">Lucy Studio</a>
+        </h1>
+        <div class="utile">
+          <a href="https://docs.edencrew.com/" target="_blank">Manual & Guide</a>
+          <a href="contact.html">Contact Sales</a>
+          <a href="guide.html" class="btnStart show"><span>Start for Free</span></a>
+          <span class="lang">
+            <a href="index.html">ENG</a>
+            <a href="index_kr.html" class="active">KOR</a>
+          </span>
+        </div>
+        <button class="btnMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="mobileMenu">
+          <span class="lang">
+            <a href="index.html">ENG</a>
+            <a href="index_kr.html" class="active">KOR</a>
+          </span>
+          <a href="https://docs.edencrew.com/" target="_blank">Manual & Guide</a>
+          <a href="contact.html">Contact Sales</a>
+          <a href="guide.html" class="btnStart"><span>Start for Free</span></a>
+        </div>
+      </div>
+    </header>
+    <section class="contactWrap">
+      <div class="inner">
+        <h3>Contact Sales</h3>
+        <p>Turning ideas into scalable digital products</p>
+        <div class="contact">
+          <form>
+            <div>
+              <span class="form-ele"><label for="">First name</label><input type="text" id="" name=""
+                  placeholder="First name"></span>
+              <span class="form-ele"><label for="">Last name</label><input type="text" id="" name=""
+                  placeholder="Last name"></span>
+            </div>
+            <span class="form-ele"><label for="">Business email</label><input type="email" id="" name=""
+                placeholder="Business email"></span>
+            <span class="form-ele"><label for="">Company</label><input type="text" id="" name=""
+                placeholder="Company"></span>
+            <span class="form-ele"><label for="">Country</label><input type="text" id="" name=""
+                placeholder="Country"></span>
+            <span class="form-ele agree">
+              <input type="checkbox" id="agree" name="agree"><label for="agree">By submitting this form, you agree to
+                our
+                <button type="button" class="btn-detail" onclick="module.layerOpen($(this), 'servicePop')">Terms of
+                  Service</button> and
+                <button type="button" class="btn-detail" onclick="module.layerOpen($(this), 'policyPop')">Privacy
+                  Policy</button>
+              </label>
+            </span>
+            <button type="button" onclick="">Contact Sales</button>
+          </form>
+          <div class="textWrap">
+            <strong>We'll help you explore how Lucy Studio fits your product and development workflow,
+              including:</strong>
+            <ul>
+              <li>ㆍCross-platform architecture with Flutter</li>
+              <li>ㆍDesign-to-production workflows with Figma</li>
+              <li>ㆍScalable deployment and team collaboration</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="contWrap">
+      <div class="section" id="Why Lucy Studio">
+        <div class="inner whylucyWrap">
+          <div>
+            <h3>Why <br class="pcBr" />choose <br />Lucy <br class="pcBr" />Studio?</h3>
+            <ul>
+              <li>
+                <span id="why01"></span>
+                <em>True Multi-Platform Efficiency (OSMU)</em>
+                <p>Lucy Studio allows you to build high-performance applications for iOS, Android, Web, Windows, macOS,
+                  and Linux using a single unified core. By sharing 80-90% of native code across all platforms, it
+                  drastically reduces development time and maintenance costs.</p>
+              </li>
+              <li>
+                <span id="why02"></span>
+                <em>Instant Deployment with Full OTA (Code-Push)</em>
+                <p>Unlike traditional development that requires lengthy app store reviews, Lucy Studio enables real-time
+                  updates for both UI (JSON) and business logic (JS). This "Code-Push" technology allows you to respond
+                  to market trends or fix bugs within hours rather than weeks.</p>
+              </li>
+            </ul>
+          </div>
+          <ul>
+            <li>
+              <span id="why03"></span>
+              <em>Unmatched Visual Consistency & Performance</em>
+              <p>Leveraging Flutter's specialized rendering engines (Skia and Impeller), Lucy Studio ensures 100% visual
+                consistency across all devices. It provides a "Pixel Perfect" experience with high-performance graphics
+                capable of 60 to 120 FPS, which is critical for complex financial charts.</p>
+            </li>
+            <li>
+              <span id="why04"></span>
+              <em>Seamless Design-to-Live Workflow</em>
+              <p>With direct Figma integration and a True WYSIWYG (What You See Is What You Get) editor, the gap between
+                design and development is eliminated. The real-time preview in the editor perfectly matches the
+                rendering on actual devices, significantly reducing QA effort.</p>
+            </li>
+            <li>
+              <span id="why05"></span>
+              <em>Professional & Standardized Developer UX</em>
+              <p>Lucy Studio provides a familiar VS Code-style script editor and utilizes JavaScript as a global
+                standard for business logic. This allows developers to utilize intelligent code completion
+                (IntelliSense) and real-time debugging tools without a steep learning curve.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="inner">
+        <h1>Lucy Studio</h1>
+        <div>
+          <!-- link sns -->
+          <div class="sns">
+            <a href="https://www.youtube.com/@lucystudioworld" class="youtube">youtube</a>
+            <a href="https://www.facebook.com/profile.php?id=61583186542396#" class="facebook">facebook</a>
+            <a href="https://www.instagram.com/lucy_studio_world" class="instagram">instagram</a>
+            <a href="https://www.linkedin.com/in/%ED%81%AC%EB%A3%A8-%EC%9D%B4%EB%93%A0-23b5393aa/" class="linkedin">linkedin</a>
+          </div>
+          <!-- //link sns -->
+          <p>Edencrew @ 2026. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <section class="wrap-layer-popup" id="servicePop">
+    <div class="dimmed"></div>
+    <div class="pop-layer">
+      <div class="head">
+        <h1>Terms of Service</h1>
+        <button class="btn-close">close</button>
+      </div>
+      <div class="contents">
+        <h2>LUCY TERMS OF SERVICE</h2>
+        <ul>
+          <li>
+            <p><strong>Last updated: </strong>2026-02-06</p>
+            <p><strong>Provider: </strong>Edencrew Inc.</p>
+            <p><strong>Address: </strong>1015, Building A, Saenggakgongjang Dangsan, 150 Yeongdeungpo-ro,
+              Yeongdeungpo-gu, Seoul, Republic of Korea</p>
+            <p><strong>Contact: </strong><a href="mailto:contact@edencrew.com">contact@edencrew.com</a></p>
+          </li>
+          <li>
+            <strong>1. Acceptance of These Terms</strong>
+            By creating an account, accessing, or using the Services, you agree to these Terms. If you use the Services
+            on behalf of an organization, you represent that you have authority to bind that organization, and “you”
+            includes that organization.
+          </li>
+          <li>
+            <strong>2. The Services and Scope</strong>
+            “Services” means <em>Lucy Studio</em>, including its <em>account registration and authentication</em>, web
+            application, APIs, and related servers and infrastructure provided by Edencrew.<br /><em>On-Premise
+              deployments and professional services</em> (installation, customization, support delivered under a
+            statement of work or order) are governed by a separate written agreement. If there is a conflict, that
+            separate agreement controls for the on-premise engagement.
+          </li>
+          <li>
+            <strong>3. Definitions</strong>
+            <em>ㆍ“Account”</em> means your Lucy Studio account used to access and use the Services.
+          </li>
+          <li>
+            <strong>4. Registration and Authentication</strong>
+            To use Lucy Studio, you must create an Account.<br />You may sign up and sign in using <em>email and
+              password</em> (Edencrew first-party OAuth2). At sign-up, we may request: <em>name, email, company, and
+              password</em>. You agree to provide accurate information and keep it reasonably up to date.
+          </li>
+          <li>
+            <strong>5. Eligibility</strong>
+            You must have legal capacity to enter into these Terms. If you use the Services for an organization, you
+            represent you are authorized to do so.
+          </li>
+          <li>
+            <strong>6. Account Security</strong>
+            You are responsible for safeguarding your Account credentials and all activity under your Account. You agree
+            not to share, sell, or transfer your login credentials. You will promptly notify us at <a
+              href="mailto:contact@edencrew.com">contact@edencrew.com</a> if you suspect unauthorized access or security
+            issues.<br />We may offer additional security features (such as two-factor authentication) in the future.
+          </li>
+          <li>
+            <strong>7. Acceptable Use</strong>
+            You must use the Services lawfully and responsibly.<br />You may not (and may not assist others to):<br />
+            <ol>
+              <li>ㆍuse the Services for unlawful, harmful, or fraudulent activity;</li>
+              <li>ㆍaccess systems, accounts, or data without authorization;</li>
+              <li>ㆍbypass, disable, or interfere with security or authentication measures;</li>
+              <li>ㆍscrape, crawl, or harvest data at scale, or impose unreasonable load on the Services;</li>
+              <li>ㆍdistribute malware, spam, or malicious code;</li>
+              <li>ㆍimpersonate others or use someone else’s account;</li>
+              <li>ㆍreverse engineer, decompile, or attempt to extract source code, except where prohibited by applicable
+                law;</li>
+              <li>ㆍinfringe intellectual property, privacy, or other rights of others.</li>
+            </ol>
+          </li>
+          <li>
+            <strong>8. Intellectual Property</strong>
+            The Services (including software, designs, trademarks, and related materials) are owned by Edencrew or its
+            licensors and protected by law. Except for the limited rights expressly granted, no rights are granted to
+            you.
+          </li>
+          <li>
+            <strong>9. Third-Party Services</strong>
+            Some features may integrate with or depend on third parties (e.g., analytics tools). Third-party services
+            are governed by their own terms and policies. Edencrew does not control third-party services and is not
+            responsible for their availability, performance, or acts/omissions.
+          </li>
+          <li>
+            <strong>10. Service Availability and Changes</strong>
+            We aim to keep the Services available and reliable, but we do not guarantee uninterrupted operation. We may
+            modify, update, or discontinue parts of the Services, especially for security, compliance, or product
+            improvement.
+          </li>
+          <li>
+            <strong>11. Suspension and Termination</strong>
+            We may suspend or terminate your access to the Services if you materially breach these Terms, we reasonably
+            believe your use creates security or legal risk, or we are required to do so by law.<br />You may request
+            account deletion as described in our Privacy Policy. After termination, we may retain certain information
+            for limited periods as described in the Privacy Policy (e.g., backups and security logs) and as required by
+            law.
+          </li>
+          <li>
+            <strong>12. Disclaimers</strong>
+            The Services are provided “as is” and “as available.” To the extent permitted by law, we disclaim all
+            warranties, including warranties of merchantability, fitness for a particular purpose, and non-infringement.
+          </li>
+          <li>
+            <strong>13. Limitation of Liability</strong>
+            To the extent permitted by law:<br />
+            <ol>
+              <li>ㆍEdencrew will not be liable for indirect, incidental, special, consequential, or punitive damages, or
+                loss of profits, revenue, data, or goodwill.</li>
+              <li>ㆍEdencrew’s total liability arising out of or related to the Services will not exceed USD 100.</li>
+            </ol>
+            Nothing in these Terms limits liability for intentional misconduct or gross negligence where such limitation
+            is prohibited by law.
+          </li>
+          <li>
+            <strong>14. Changes to These Terms</strong>
+            We may update these Terms. If changes are material, we will provide notice via email and/or in-product
+            notification before they take effect. Where required, we will request your affirmative acceptance.
+          </li>
+          <li>
+            <strong>15. Governing Law and Jurisdiction</strong>
+            For business/professional users, these Terms are governed by the laws of the <em>Republic of Korea</em>, and
+            disputes will be submitted to the competent courts of <em>Seoul, Republic of Korea.</em><br />If mandatory
+            consumer protection laws apply to you, those mandatory rules will apply to the extent required by law.
+          </li>
+          <li>
+            <strong>16. Contact</strong>
+            Questions about these Terms: <a href="mailto:contact@edencrew.com">contact@edencrew.com</a>
+          </li>
+        </ul>
+      </div>
+      <div class="foot">
+        <button class="btn-close">OK</button>
+      </div>
+    </div>
+  </section>
+  <section class="wrap-layer-popup" id="policyPop">
+    <div class="dimmed"></div>
+    <div class="pop-layer">
+      <div class="head">
+        <h1>Privacy Policy</h1>
+        <button class="btn-close">close</button>
+      </div>
+      <div class="contents">
+        <h2>LUCY PRIVACY POLICY</h2>
+        <ul>
+          <li>
+            <p><strong>Last updated: </strong>2026-02-06</p>
+            This Privacy Policy explains how Edencrew Inc. (“Edencrew,” “we,” “us”) collects, uses, and shares personal
+            data when you use <em>Lucy Studio.</em>
+          </li>
+          <li>
+            <strong>1. Controller and Contact</strong>
+            <p><strong>Controller : </strong>Edencrew Inc.</p>
+            <p><strong>Address : </strong>1015, Building A, Saenggakgongjang Dangsan, 150 Yeongdeungpo-ro,
+              Yeongdeungpo-gu, Seoul, Republic of Korea</p>
+            <p><strong>Email : </strong><a href="mailto:contact@edencrew.com">contact@edencrew.com</a></p>
+          </li>
+          <li>
+            <strong>2. EU/EEA Users and EU Representative (Article 27 GDPR)</strong>
+            Edencrew is not established in the EU/EEA. Where required under applicable law, Edencrew will appoint an EU
+            representative and update this Policy with the representative’s contact details.
+          </li>
+          <li>
+            <strong>3. Personal Data We Collect</strong>
+            We may collect the following categories of personal data:
+            <strong>Account and Identity Data</strong>
+            <ol>
+              <li>ㆍName</li>
+              <li>ㆍEmail</li>
+              <li>ㆍCompany</li>
+              <li>ㆍPassword (stored in hashed form; we do not store plaintext passwords)</li>
+            </ol>
+            <strong>Usage, Device, and Security Data</strong>
+            <ol>
+              <li>ㆍIP address, timestamps, device/browser information</li>
+              <li>ㆍAccess logs, security events, and abuse-prevention signals</li>
+            </ol>
+            <strong>Support Communications</strong>
+            <ol>
+              <li>ㆍMessages and attachments you send to support</li>
+              <li>ㆍRecords of support interactions</li>
+            </ol>
+          </li>
+          <li>
+            <strong>4. How We Use Personal Data and Legal Bases</strong>
+            We process personal data for the following purposes:
+            <ol>
+              <li><strong>ㆍProvide and operate Lucy Studio (account creation, login, and core features)</strong><br />
+                - Legal basis: performance of a contract / steps at your request.</li>
+              <li><strong>ㆍSecure the Services (fraud prevention, abuse detection, incident response,
+                  stability)</strong><br />
+                - Legal basis: legitimate interests in securing and operating the Services.</li>
+              <li><strong>ㆍTransactional communications (password reset, security notices, important service
+                  notices)</strong><br />
+                - Legal basis: contract and/or legitimate interests, depending on the message.</li>
+              <li><strong>ㆍAnalytics and measurement (Google Analytics)</strong><br />
+                - Legal basis: consent where required for non-essential cookies/trackers (see Cookies section).</li>
+              <li><strong>ㆍLegal compliance and enforcement</strong><br />
+                - Legal basis: legal obligation and/or legitimate interests (e.g., responding to lawful requests,
+                enforcing Terms).</li>
+            </ol>
+            We do not use marketing/newsletter opt-in at sign-up today. If we introduce marketing in the future, we will
+            use opt-in consent and provide easy withdrawal.
+          </li>
+          <li>
+            <strong>5. Cookies and Similar Technologies</strong>
+            We use cookies and similar technologies for essential functionality (where applicable) and analytics (e.g.,
+            Google Analytics). Where required, we will request consent before enabling non-essential cookies/trackers
+            and will provide cookie settings.
+          </li>
+          <li>
+            <strong>6. Sharing and Processors</strong>
+            We may share personal data with service providers (processors) that help us operate the Services, such as:
+            <ol>
+              <li>ㆍEU-region cloud hosting and storage providers (for EU users)</li>
+              <li>ㆍEmail delivery providers (for password reset and service notices)</li>
+              <li>ㆍAnalytics providers (e.g., Google Analytics)</li>
+              <li>ㆍMonitoring and support tooling providers</li>
+            </ol>
+            We also may disclose data if required by law, to protect rights and safety, or to prevent fraud and abuse.
+          </li>
+          <li>
+            <strong>7. International Transfers</strong>
+            We intend to host EU user data primarily in the EU. However, international transfers may occur depending on
+            operations and vendors.
+            <ol>
+              <li><em>ㆍAnalytics providers</em> may process data outside the EU/EEA depending on their infrastructure
+                and configurations. Where required, we will rely on valid transfer mechanisms and safeguards.</li>
+              <li><em>ㆍFuture migration to Korea :</em> If we migrate EU user data to the Republic of Korea, we will
+                ensure an appropriate transfer mechanism is used and update notices as required.</li>
+            </ol>
+          </li>
+          <li>
+            <strong>8. Data Retention</strong>
+            We retain personal data only as long as necessary for the purposes described above:
+            <ol>
+              <li><em>ㆍAccount data :</em> while your account is active.
+              <li><em>ㆍAfter account deletion request :</em> we delete or anonymize personal data within a reasonable
+                time, except:<br />
+                <em>- Backups :</em> deleted on a rolling basis within up to 90 days.<br />
+                <em>- Security and access logs :</em> retained for up to 12 months for security, fraud prevention, and
+                abuse detection.<br />
+                <em>- Legal/contract records :</em> retained as required by law or for dispute defense.
+              </li>
+            </ol>
+          </li>
+          <li>
+            <strong>9. Your Rights (EU/Spain Users)</strong>
+            Where applicable, you may have rights to access, rectify, delete, restrict processing, data portability, and
+            object, and to withdraw consent where processing is based on consent. To exercise rights, contact <a
+              href="mailto:contact@edencrew.com">contact@edencrew.com</a><br />You may also lodge a complaint with a
+            supervisory authority, including Spain’s data protection authority (AEPD).
+          </li>
+          <li>
+            <strong>10. Security</strong>
+            We implement reasonable technical and organizational measures to protect personal data (e.g., access
+            controls, encryption in transit, and security logging). If a personal data breach occurs, we will take steps
+            consistent with applicable legal requirements.
+          </li>
+          <li>
+            <strong>11. Children</strong>
+            The Services are intended for users with legal capacity. If we learn we collected personal data from a child
+            in a manner requiring parental consent under applicable law, we will take appropriate steps.
+          </li>
+          <li>
+            <strong>12. Changes to This Policy</strong>
+            We may update this Privacy Policy. If changes are material, we will notify you via email and/or in-product
+            notice before they take effect.
+          </li>
+        </ul>
+      </div>
+      <div class="foot">
+        <button class="btn-close">OK</button>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>
