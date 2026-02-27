@@ -13,6 +13,9 @@ var module = {
     init : function(){
       module.togglebtnStart();
       module.navActive();
+      module.guideEmailGate();
+      module.contactFormValidation();
+      module.playerQrGate();
 
       module.featuresAnimation();
       //module.featuresItemsScroll();
@@ -89,6 +92,262 @@ var module = {
       };
 
       window.addEventListener('scroll', updateActive);
+    },
+    guideEmailGate: function () {
+      const guideStage = document.querySelector('.guideStage');
+      const guideWrap = document.querySelector('.guideWrap');
+      const guide = document.querySelector('.guideWrap .guide');
+      const downloadWrap = document.querySelector('.downloadWrap');
+      if (!guideStage || !guideWrap || !guide || !downloadWrap) return;
+
+      const emailInput = guide.querySelector('input[type="email"]');
+      const submitBtn = guide.querySelector('button[type="button"]');
+      const backBtn = downloadWrap.querySelector('.btnGuideBack');
+      if (!emailInput || !submitBtn || !backBtn) return;
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      let recoverTimer = null;
+      const updateStageHeight = () => {
+        const activeSection = guideStage.classList.contains('is-download') ? downloadWrap : guideWrap;
+        const targetHeight = Math.max(activeSection.offsetHeight, activeSection.scrollHeight);
+        guideStage.style.height = targetHeight + 'px';
+      };
+
+      const isEmailValid = () => {
+        const value = emailInput.value.trim();
+        return value.length > 0 && value.length <= 100 && emailPattern.test(value);
+      };
+
+      const replayBlueBarAnimation = () => {
+        guide.classList.remove('is-recover');
+        void guide.offsetWidth;
+        guide.classList.add('is-recover');
+        if (recoverTimer) {
+          window.clearTimeout(recoverTimer);
+        }
+        recoverTimer = window.setTimeout(() => {
+          guide.classList.remove('is-recover');
+        }, 500);
+      };
+
+      const updateEmailState = () => {
+        const hasValue = emailInput.value.trim().length > 0;
+        const wasError = guide.classList.contains('is-error');
+        const isValid = isEmailValid();
+        const showError = hasValue && !isValid;
+        emailInput.classList.toggle('is-invalid', showError);
+        guide.classList.toggle('is-error', showError);
+        if (wasError && !showError && hasValue && isValid && guide.matches(':focus-within')) {
+          replayBlueBarAnimation();
+        }
+        submitBtn.disabled = !isValid;
+        return isValid;
+      };
+
+      const showDownload = () => {
+        emailInput.value = emailInput.value.trim();
+        emailInput.dataset.touched = 'true';
+        if (!updateEmailState()) {
+          emailInput.focus();
+          return;
+        }
+        guideStage.classList.add('is-download');
+        window.requestAnimationFrame(updateStageHeight);
+      };
+
+      const resetGuideGate = () => {
+        guideStage.classList.remove('is-download');
+        emailInput.value = '';
+        emailInput.dataset.touched = 'false';
+        emailInput.classList.remove('is-valid', 'is-invalid');
+        guide.classList.remove('is-error', 'is-recover');
+        if (recoverTimer) {
+          window.clearTimeout(recoverTimer);
+          recoverTimer = null;
+        }
+        submitBtn.disabled = true;
+        updateStageHeight();
+      };
+
+      resetGuideGate();
+
+      submitBtn.addEventListener('click', showDownload);
+      backBtn.addEventListener('click', () => {
+        guideStage.classList.remove('is-download');
+        window.requestAnimationFrame(updateStageHeight);
+      });
+      emailInput.addEventListener('input', () => {
+        emailInput.dataset.touched = 'true';
+        updateEmailState();
+      });
+      emailInput.addEventListener('blur', () => {
+        emailInput.value = emailInput.value.trim();
+        emailInput.dataset.touched = 'true';
+        updateEmailState();
+      });
+      emailInput.addEventListener('keydown', (e) => {
+        if (e.key !== 'Enter') return;
+        e.preventDefault();
+        showDownload();
+      });
+      window.addEventListener('pageshow', resetGuideGate);
+      window.addEventListener('resize', updateStageHeight);
+    },
+    contactFormValidation: function () {
+      const contactWrap = document.querySelector('.contactWrap');
+      if (!contactWrap) return;
+
+      const form = contactWrap.querySelector('form');
+      const submitBtn = form ? form.querySelector('.btnContactSales') : null;
+      const agreeInput = form ? form.querySelector('input[name="agree"]') : null;
+      if (!form || !submitBtn || !agreeInput) return;
+
+      const requiredFields = Array.from(
+        form.querySelectorAll(
+          'input[name="firstName"], input[name="lastName"], input[name="businessEmail"], input[name="company"], input[name="country"]'
+        )
+      );
+      if (!requiredFields.length) return;
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      const isFieldValid = (field) => {
+        const value = field.value.trim();
+        if (!value || value.length > 100) return false;
+        if (field.type === 'email') {
+          return emailPattern.test(value);
+        }
+        return true;
+      };
+
+      const updateFieldState = (field, forceDisplay) => {
+        const shouldDisplay =
+          forceDisplay ||
+          field.dataset.touched === 'true' ||
+          field.value.trim().length > 0;
+        const isValid = isFieldValid(field);
+        field.classList.remove('is-valid', 'is-invalid');
+        if (shouldDisplay) {
+          field.classList.add(isValid ? 'is-valid' : 'is-invalid');
+        }
+        return isValid;
+      };
+
+      const updateSubmitState = () => {
+        const allFieldsValid = requiredFields.every(isFieldValid);
+        submitBtn.disabled = !(allFieldsValid && agreeInput.checked);
+      };
+
+      const openMailClient = () => {
+        const subject = "[Lucy Studio] Contact Sales";
+        const payload = {
+          firstName: form.querySelector('input[name="firstName"]').value.trim(),
+          lastName: form.querySelector('input[name="lastName"]').value.trim(),
+          businessEmail: form.querySelector('input[name="businessEmail"]').value.trim(),
+          company: form.querySelector('input[name="company"]').value.trim(),
+          country: form.querySelector('input[name="country"]').value.trim()
+        };
+        const body = [
+          "A new Contact Sales request was submitted.",
+          "",
+          "First name: " + payload.firstName,
+          "Last name: " + payload.lastName,
+          "Business email: " + payload.businessEmail,
+          "Company: " + payload.company,
+          "Country: " + payload.country
+        ].join("\n");
+        const mailto =
+          "mailto:contact@edencrew.com?subject=" +
+          encodeURIComponent(subject) +
+          "&reply-to=" +
+          encodeURIComponent(payload.businessEmail) +
+          "&body=" +
+          encodeURIComponent(body);
+        window.location.href = mailto;
+      };
+
+      requiredFields.forEach((field) => {
+        updateFieldState(field, false);
+        field.addEventListener('input', () => {
+          field.dataset.touched = 'true';
+          updateFieldState(field, true);
+          updateSubmitState();
+        });
+        field.addEventListener('blur', () => {
+          field.value = field.value.trim();
+          field.dataset.touched = 'true';
+          updateFieldState(field, true);
+          updateSubmitState();
+        });
+      });
+
+      agreeInput.addEventListener('change', () => {
+        updateSubmitState();
+      });
+
+      updateSubmitState();
+
+      submitBtn.addEventListener('click', () => {
+        requiredFields.forEach((field) => {
+          field.value = field.value.trim();
+          field.dataset.touched = 'true';
+          updateFieldState(field, true);
+        });
+        updateSubmitState();
+        const invalidField = requiredFields.find((field) => !isFieldValid(field));
+        if (invalidField) {
+          invalidField.focus();
+          return;
+        }
+        if (!agreeInput.checked) return;
+        openMailClient();
+      });
+    },
+    playerQrGate: function () {
+      const playerButtons = Array.from(document.querySelectorAll('.player .store-link-btn'));
+      const modal = document.getElementById('playerQrModal');
+      if (!playerButtons.length || !modal) return;
+
+      const qrImage = modal.querySelector('.playerQrImage');
+      const qrTitle = modal.querySelector('.playerQrTitle');
+      const qrLink = modal.querySelector('.playerQrLink');
+      const closeBtn = modal.querySelector('.playerQrClose');
+      const dim = modal.querySelector('.playerQrDim');
+      if (!qrImage || !qrTitle || !qrLink || !closeBtn || !dim) return;
+
+      const isMobileClient = () => mobile || window.innerWidth <= 1024;
+      const closeModal = () => {
+        modal.hidden = true;
+        qrImage.src = '';
+      };
+      const openModal = (label, url) => {
+        qrTitle.textContent = 'Scan QR Code - ' + label;
+        qrImage.src =
+          'https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=' +
+          encodeURIComponent(url);
+        qrLink.href = url;
+        qrLink.textContent = 'Open ' + label;
+        modal.hidden = false;
+      };
+
+      playerButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const url = btn.dataset.storeUrl;
+          const label = btn.dataset.storeName || 'Store';
+          if (!url) return;
+          if (isMobileClient()) {
+            window.open(url);
+            return;
+          }
+          openModal(label, url);
+        });
+      });
+
+      closeBtn.addEventListener('click', closeModal);
+      dim.addEventListener('click', closeModal);
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.hidden) {
+          closeModal();
+        }
+      });
     },
     scrollNavToActive: function (activeLink) {
       const scrollWrap = activeLink.parentElement;

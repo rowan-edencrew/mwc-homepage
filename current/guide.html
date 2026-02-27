@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -56,60 +56,65 @@
         </div>
       </div>
     </header>
-    <!-- email check -->
-    <section class="guideWrap">
-      <div class="inner">
-        <h3>Welcome to Lucy Studio<br />Start publishing now</h3>
-        <div class="guide">
-          <span class="form-ele"><label for="">First name</label><input type="email" id="" name=""
-              placeholder="Enter your work email"></span>
-          <button type="button">summit</button>
-        </div>
-      </div>
-    </section>
-    <!-- //email check -->
-    <!-- download -->
-    <section class="downloadWrap">
-      <div class="inner">
-        <div class="download">
-          <em>Start for Free</em>
-          <h3>Build. Run. <br class="pcBr" />Deploy.</h3>
-          <p>Access the full development environment and runtime player designed for seamless cross-platform creation
-            and deployment.</p>
-        </div>
-        <div class="downloadBlock">
-          <p>Select your operating system to begin installation. <br />Installation guide and system requirements are
-            available in the Manual & Guide.</p>
-          <div class="studio">
-            <strong>Lucy Studio</strong>
-            <p>Design, build, connect, and deploy from a unified visual development studio.<br />Turn structured design
-              assets into production-ready applications with real-time connectivity and multi-platform output.</p>
-            <!-- link Studio -->
-            <div>
-              <button type="button"><span>macOS 11.0+</span></button>
-              <button type="button"><span>window 10, 11</span></button>
+    <div class="guideStage">
+      <div class="guideStageTrack">
+        <!-- email check -->
+        <section class="guideWrap">
+          <div class="inner">
+            <h3>Welcome to Lucy Studio<br />Start publishing now</h3>
+            <div class="guide">
+              <span class="form-ele"><label for="workEmailEn">Work email</label><input type="email" id="workEmailEn"
+                  name="workEmail" maxlength="100" placeholder="Enter your work email" required></span>
+              <button type="button" disabled>submit</button>
             </div>
-            <!-- //link Studio -->
           </div>
-          <div class="player">
-            <strong>Lucy Player</strong>
-            <p>Run, preview, and manage applications built within the studio environment.<br />Optimized for
-              performance, testing, and controlled distribution across supported platforms.</p>
-            <!-- link player -->
-            <div>
-              <button type="button"
-                onclick="window.open('https://apps.apple.com/kr/app/lucy-player/id6758976654?l=en-GB')">App store<span></span>
-              </button>
-              <button type="button"
-                onclick="window.open('https://play.google.com/store/apps/details?id=com.edencrew.lucy_player')">Google Play<span></span>
-              </button>
+        </section>
+        <!-- //email check -->
+        <!-- download -->
+        <section class="downloadWrap">
+          <div class="inner">
+            <div class="download">
+              <button type="button" class="btnGuideBack" aria-label="Back to email input">back</button>
+              <em>Start for Free</em>
+              <h3>Build. Run. <br class="pcBr" />Deploy.</h3>
+              <p>Access the full development environment and runtime player designed for seamless cross-platform creation
+                and deployment.</p>
             </div>
-            <!-- //link player -->
+            <div class="downloadBlock">
+              <p>Select your operating system to begin installation. <br />Installation guide and system requirements are
+                available in the Manual & Guide.</p>
+              <div class="studio">
+                <strong>Lucy Studio</strong>
+                <p>Design, build, connect, and deploy from a unified visual development studio.<br />Turn structured design
+                  assets into production-ready applications with real-time connectivity and multi-platform output.</p>
+                <!-- link Studio -->
+                <div>
+                  <button type="button"><span>macOS 11.0+</span></button>
+                  <button type="button"><span>window 10, 11</span></button>
+                </div>
+                <!-- //link Studio -->
+              </div>
+              <div class="player">
+                <strong>Lucy Player</strong>
+                <p>Run, preview, and manage applications built within the studio environment.<br />Optimized for
+                  performance, testing, and controlled distribution across supported platforms.</p>
+                <!-- link player -->
+                <div>
+                  <button type="button" class="store-link-btn" data-store-name="App Store"
+                    data-store-url="https://apps.apple.com/kr/app/lucy-player/id6758976654?l=en-GB">App store<span></span>
+                  </button>
+                  <button type="button" class="store-link-btn" data-store-name="Google Play"
+                    data-store-url="https://play.google.com/store/apps/details?id=com.edencrew.lucy_player">Google Play<span></span>
+                  </button>
+                </div>
+                <!-- //link player -->
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
+        <!-- //download -->
       </div>
-    </section>
-    <!-- //download -->
+    </div>
     <footer>
       <div class="inner">
         <h1>Lucy Studio</h1>
@@ -127,6 +132,17 @@
       </div>
     </footer>
   </div>
+  <section class="playerQrModal" id="playerQrModal" hidden>
+    <div class="playerQrDim"></div>
+    <div class="playerQrDialog" role="dialog" aria-modal="true" aria-labelledby="playerQrTitle">
+      <button type="button" class="playerQrClose" aria-label="Close">close</button>
+      <h4 id="playerQrTitle" class="playerQrTitle">Scan QR Code</h4>
+      <div class="playerQrImageWrap">
+        <img class="playerQrImage" src="" alt="Download link QR code">
+      </div>
+      <a class="playerQrLink" href="#" target="_blank" rel="noopener">Open store link</a>
+    </div>
+  </section>
 
   <section class="wrap-layer-popup" id="speakerPop">
     <div class="dimmed"></div>

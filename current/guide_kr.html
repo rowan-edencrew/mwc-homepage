@@ -56,58 +56,63 @@
         </div>
       </div>
     </header>
-    <!-- email check -->
-    <section class="guideWrap">
-      <div class="inner">
-        <h3>Welcome to Lucy Studio<br />Start publishing now</h3>
-        <div class="guide">
-          <span class="form-ele"><label for="">First name</label><input type="email" id="" name=""
-              placeholder="Enter your work email"></span>
-          <button type="button">summit</button>
-        </div>
-      </div>
-    </section>
-    <!-- //email check -->
-    <!-- download -->
-    <section class="downloadWrap">
-      <div class="inner">
-        <div class="download">
-          <em>Start for Free</em>
-          <h3>Build. Run. <br class="pcBr" />Deploy.</h3>
-          <p>크로스 플랫폼 제작과 배포를 위해 설계된 전체 개발 환경과 런타임 플레이어를 자유롭게 사용할 수 있습니다.</p>
-        </div>
-        <div class="downloadBlock">
-          <p>설치할 운영 체제를 선택하면 설치가 시작됩니다. <br />자세한 설치 방법과 시스템 요구 사항은 매뉴얼 & 가이드에서 확인할 수 있습니다.</p>
-          <div class="studio">
-            <strong>Lucy Studio</strong>
-            <p>단일 비주얼 개발 스튜디오에서 디자인·구축·연동·배포까지 한 번에 진행할 수 있습니다. <br />정형화된 디자인 에셋을 실시간 연동과 멀티 플랫폼 출력을 지원하는 프로덕션급
-              애플리케이션으로 바로 전환합니다.</p>
-            <!-- link Studio -->
-            <div>
-              <button type="button"><span>macOS 11.0+</span></button>
-              <button type="button"><span>window 10, 11</span></button>
+    <div class="guideStage">
+      <div class="guideStageTrack">
+        <!-- email check -->
+        <section class="guideWrap">
+          <div class="inner">
+            <h3>Welcome to Lucy Studio<br />Start publishing now</h3>
+            <div class="guide">
+              <span class="form-ele"><label for="workEmailKr">Work email</label><input type="email" id="workEmailKr"
+                  name="workEmail" maxlength="100" placeholder="Enter your work email" required></span>
+              <button type="button" disabled>submit</button>
             </div>
-            <!-- //link Studio -->
           </div>
-          <div class="player">
-            <strong>Lucy Player</strong>
-            <p>Lucy Studio로 제작된 애플리케이션을 실행·미리보기·관리하는 전용 플레이어입니다. <br />지원되는 각 플랫폼에서 성능 검증, 테스트, 그리고 안정적인 배포를 위해 최적화되어
-              있습니다.</p>
-            <!-- link player -->
-            <div>
-              <button type="button"
-                onclick="window.open('https://apps.apple.com/kr/app/lucy-player/id6758976654?l=en-GB')">App store<span></span>
-              </button>
-              <button type="button"
-                onclick="window.open('https://play.google.com/store/apps/details?id=com.edencrew.lucy_player')">Google Play<span></span>
-              </button>
+        </section>
+        <!-- //email check -->
+        <!-- download -->
+        <section class="downloadWrap">
+          <div class="inner">
+            <div class="download">
+              <button type="button" class="btnGuideBack" aria-label="Back to email input">back</button>
+              <em>Start for Free</em>
+              <h3>Build. Run. <br class="pcBr" />Deploy.</h3>
+              <p>크로스 플랫폼 제작과 배포를 위해 설계된 전체 개발 환경과 런타임 플레이어를 자유롭게 사용할 수 있습니다.</p>
             </div>
-            <!-- //link player -->
+            <div class="downloadBlock">
+              <p>설치할 운영 체제를 선택하면 설치가 시작됩니다. <br />자세한 설치 방법과 시스템 요구 사항은 매뉴얼 & 가이드에서 확인할 수 있습니다.</p>
+              <div class="studio">
+                <strong>Lucy Studio</strong>
+                <p>단일 비주얼 개발 스튜디오에서 디자인·구축·연동·배포까지 한 번에 진행할 수 있습니다. <br />정형화된 디자인 에셋을 실시간 연동과 멀티 플랫폼 출력을 지원하는 프로덕션급
+                  애플리케이션으로 바로 전환합니다.</p>
+                <!-- link Studio -->
+                <div>
+                  <button type="button"><span>macOS 11.0+</span></button>
+                  <button type="button"><span>window 10, 11</span></button>
+                </div>
+                <!-- //link Studio -->
+              </div>
+              <div class="player">
+                <strong>Lucy Player</strong>
+                <p>Lucy Studio로 제작된 애플리케이션을 실행·미리보기·관리하는 전용 플레이어입니다. <br />지원되는 각 플랫폼에서 성능 검증, 테스트, 그리고 안정적인 배포를 위해 최적화되어
+                  있습니다.</p>
+                <!-- link player -->
+                <div>
+                  <button type="button" class="store-link-btn" data-store-name="App Store"
+                    data-store-url="https://apps.apple.com/kr/app/lucy-player/id6758976654?l=en-GB">App store<span></span>
+                  </button>
+                  <button type="button" class="store-link-btn" data-store-name="Google Play"
+                    data-store-url="https://play.google.com/store/apps/details?id=com.edencrew.lucy_player">Google Play<span></span>
+                  </button>
+                </div>
+                <!-- //link player -->
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
+        <!-- //download -->
       </div>
-    </section>
-    <!-- //download -->
+    </div>
     <footer>
       <div class="inner">
         <h1>Lucy Studio</h1>
@@ -125,6 +130,17 @@
       </div>
     </footer>
   </div>
+  <section class="playerQrModal" id="playerQrModal" hidden>
+    <div class="playerQrDim"></div>
+    <div class="playerQrDialog" role="dialog" aria-modal="true" aria-labelledby="playerQrTitle">
+      <button type="button" class="playerQrClose" aria-label="Close">close</button>
+      <h4 id="playerQrTitle" class="playerQrTitle">Scan QR Code</h4>
+      <div class="playerQrImageWrap">
+        <img class="playerQrImage" src="" alt="Download link QR code">
+      </div>
+      <a class="playerQrLink" href="#" target="_blank" rel="noopener">Open store link</a>
+    </div>
+  </section>
 
   <section class="wrap-layer-popup" id="speakerPop">
     <div class="dimmed"></div>
