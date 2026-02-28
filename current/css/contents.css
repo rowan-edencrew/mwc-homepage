@@ -161,7 +161,7 @@ footer .inner >div p{margin-top:30px; font-size:18px;color:#A3A3A3;}
 .contWrap .careersWrap h3{font-family:"PlusJakartaSansRegular";font-size:32px;font-weight:500;color:#fff;}
 .contWrap .careersWrap strong{font-family:"PlusJakartaSansExtraBold";font-size:80px;line-height:1.2;color:#fff;word-break:keep-all; transition:transform 0.6s cubic-bezier(.22,.61,.36,1);}
 .contWrap .careersWrap p{margin-top:40px; font-size:22px;font-weight:300;color:#fff;word-break:keep-all;}
-.contWrap .careersWrap a{display:inline-block; margin-top:68px;width:340px;height:60px; font-size:26px;font-weight:700;line-height:60px;color:#181818; border-radius:30px; background-color:#fff; transition: transform 0.5s ease, box-shadow 0.5s ease}
+.contWrap .careersWrap a{display:inline-block; margin-top:68px;width:340px;height:60px; font-size:26px;font-weight:700;line-height:60px;color:#181818; border-radius:30px; background-color:#fff;cursor:default; transition: transform 0.5s ease, box-shadow 0.5s ease}
 .contWrap .careersWrap.active::before {background:rgba(0,0,0,0.3)}
 .contWrap .careersWrap.active strong {transform:scale(1.05)}
 .contWrap .careersWrap.active a {transform:translateY(-8px);box-shadow:0 15px 40px rgba(0,0,0,0.4)}
