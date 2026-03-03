@@ -15,6 +15,7 @@ var module = {
       module.navActive();
       module.guideEmailGate();
       module.contactFormValidation();
+      module.studioDownloadGate();
       module.playerQrGate();
 
       module.featuresAnimation();
@@ -299,6 +300,18 @@ var module = {
         }
         if (!agreeInput.checked) return;
         openMailClient();
+      });
+    },
+    studioDownloadGate: function () {
+      const studioButtons = Array.from(document.querySelectorAll('.studio button[data-store-url]'));
+      if (!studioButtons.length) return;
+
+      studioButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const url = btn.dataset.storeUrl;
+          if (!url) return;
+          window.open(url, '_blank', 'noopener');
+        });
       });
     },
     playerQrGate: function () {
